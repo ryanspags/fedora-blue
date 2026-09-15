@@ -38,6 +38,7 @@ modules:
         - micro
         - starship
         - evolution
+        - uxplay
         - adw-gtk3-theme
     remove:
       packages:
@@ -66,7 +67,7 @@ modules:
           - org.gnome.Papers
           - org.gnome.Characters
           - org.gnome.Calculator
-          - org.gnome.Extensions
+          - org.gnome.Connections
           - org.gnome.clocks
           - org.gnome.TextEditor
       - scope: user # Also add Flathub user repo, but no user packages
