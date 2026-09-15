@@ -24,6 +24,17 @@ modules:
     install:
       packages:
         - gnome-software-rpm-ostree
+        - git
+        - curl
+        - ripgrep
+        - fd-find
+        - fzf
+        - tmux
+        - podman
+        - jq
+        - wget
+        - vim
+        - fwupd
         - micro
         - starship
         - evolution
@@ -35,7 +46,6 @@ modules:
         - firefox
         - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
         - nvtop
-        - htop
   - type: default-flatpaks
     configurations:
       - notify: false # Send notification after install/uninstall is finished (true/false)
@@ -51,6 +61,14 @@ modules:
           - org.gnome.Weather
           - org.gnome.Contacts
           - org.gnome.Calendar
+          - org.gnome.SimpleScan
+          - org.gnome.font-viewer
+          - org.gnome.Papers
+          - org.gnome.Characters
+          - org.gnome.Calculator
+          - org.gnome.Extensions
+          - org.gnome.clocks
+          - org.gnome.TextEditor
       - scope: user # Also add Flathub user repo, but no user packages
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
