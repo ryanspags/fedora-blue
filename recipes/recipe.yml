@@ -29,6 +29,9 @@ modules:
         - gnome-software-rpm-ostree
         - gnome-tweaks
         - fwupd
+        - power-profiles-daemon
+        - thermald
+        - lm_sensors
 
         # Development / CLI
         - git
@@ -58,7 +61,6 @@ modules:
         - pciutils
         - usbutils
         - lsof
-        - lm_sensors
 
         # Containers
         - podman
