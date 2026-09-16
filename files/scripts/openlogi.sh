@@ -38,6 +38,16 @@ ln -sf \
   /usr/lib/systemd/user/openlogi-agent.service \
   /etc/systemd/user/graphical-session.target.wants/openlogi-agent.service
 
+echo "Refreshing desktop and icon caches..."
+
+if command -v gtk-update-icon-cache >/dev/null 2>&1; then
+    gtk-update-icon-cache -qtf /usr/share/icons/hicolor || true
+fi
+
+if command -v update-desktop-database >/dev/null 2>&1; then
+    update-desktop-database -q /usr/share/applications || true
+fi
+
 echo "OpenLogi agent configured for graphical sessions."
 
 rm -rf "${OPENLOGI_DIR}"
