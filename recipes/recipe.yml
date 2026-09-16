@@ -57,6 +57,9 @@ modules:
         - pciutils
         - usbutils
         - lsof
+        - fprintd
+        - fprintd-pam
+        - libfprint
         - tailscale
     remove:
       packages:
