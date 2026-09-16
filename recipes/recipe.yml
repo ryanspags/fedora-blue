@@ -60,6 +60,9 @@ modules:
         - pciutils
         - usbutils
         - lsof
+        - wireguard-tools
+        - NetworkManager
+        - NetworkManager-tui
 
         # Containers
         - podman
