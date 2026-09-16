@@ -23,18 +23,22 @@ echo "${OPENLOGI_SHA256}  ${OPENLOGI_DIR}/${OPENLOGI_RPM}" \
 
 echo "Checksum verified."
 
-echo "Installing OpenLogi RPM..."
+echo "Installing OpenLogi RPM without running package scriptlets..."
 
-dnf5 install -y \
+rpm \
+  --install \
+  --noscripts \
   "${OPENLOGI_DIR}/${OPENLOGI_RPM}"
 
-echo "Enabling OpenLogi agent for all users..."
+echo "Configuring OpenLogi systemd user service..."
 
-mkdir -p /etc/systemd/user/default.target.wants
+mkdir -p /etc/systemd/user/graphical-session.target.wants
 
 ln -sf \
   /usr/lib/systemd/user/openlogi-agent.service \
-  /etc/systemd/user/default.target.wants/openlogi-agent.service
+  /etc/systemd/user/graphical-session.target.wants/openlogi-agent.service
+
+echo "OpenLogi agent configured for graphical sessions."
 
 rm -rf "${OPENLOGI_DIR}"
 
