@@ -88,6 +88,7 @@ modules:
       - blueferry.sh
       - openlogi.sh
       - tailscale.sh
+      - protonpass.sh
   - type: default-flatpaks
     configurations:
       - notify: false # Send notification after install/uninstall is finished (true/false)
