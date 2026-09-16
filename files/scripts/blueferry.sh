@@ -10,19 +10,17 @@ echo "Installing BlueFerry ${BLUEFERRY_VERSION}..."
 
 mkdir -p "${BLUEFERRY_DIR}"
 
-curl -fLsS --retry 5 
-"${BLUEFERRY_RELEASE_URL}/blueferry-backend-${BLUEFERRY_VERSION}-1.fc43.noarch.rpm" 
--o "${BLUEFERRY_DIR}/blueferry-backend.rpm"
+curl -fL --retry 5 -o "${BLUEFERRY_DIR}/blueferry-backend.rpm" \
+  "${BLUEFERRY_RELEASE_URL}/blueferry-backend-${BLUEFERRY_VERSION}-1.fc43.noarch.rpm"
 
-curl -fLsS --retry 5 
-"${BLUEFERRY_RELEASE_URL}/blueferry-gtk-${BLUEFERRY_VERSION}-1.fc43.noarch.rpm" 
--o "${BLUEFERRY_DIR}/blueferry-gtk.rpm"
+curl -fL --retry 5 -o "${BLUEFERRY_DIR}/blueferry-gtk.rpm" \
+  "${BLUEFERRY_RELEASE_URL}/blueferry-gtk-${BLUEFERRY_VERSION}-1.fc43.noarch.rpm"
 
 echo "Installing BlueFerry RPMs..."
 
-dnf5 install -y 
-"${BLUEFERRY_DIR}/blueferry-backend.rpm" 
-"${BLUEFERRY_DIR}/blueferry-gtk.rpm"
+dnf5 install -y \
+  "${BLUEFERRY_DIR}/blueferry-backend.rpm" \
+  "${BLUEFERRY_DIR}/blueferry-gtk.rpm"
 
 rm -rf "${BLUEFERRY_DIR}"
 
