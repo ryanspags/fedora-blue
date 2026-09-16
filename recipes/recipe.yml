@@ -19,7 +19,9 @@ modules:
 
   - type: dnf
     repos:
-      copr:
+     files:
+        - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
+     copr:
         - atim/starship
     install:
       packages:
@@ -55,6 +57,7 @@ modules:
         - pciutils
         - usbutils
         - lsof
+        - tailscale
     remove:
       packages:
         # example: removing firefox (in favor of the flatpak)
@@ -66,6 +69,7 @@ modules:
     scripts:
       - blueferry.sh
       - openlogi.sh
+      - tailscale.sh
   - type: default-flatpaks
     configurations:
       - notify: false # Send notification after install/uninstall is finished (true/false)
