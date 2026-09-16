@@ -50,6 +50,7 @@ modules:
   - type: script
     scripts:
       - blueferry.sh
+      - openlogi.sh
   - type: default-flatpaks
     configurations:
       - notify: false # Send notification after install/uninstall is finished (true/false)
